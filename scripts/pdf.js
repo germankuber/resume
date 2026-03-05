@@ -1,4 +1,3 @@
-import { readFileSync } from 'fs';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
 import puppeteer from 'puppeteer';
@@ -22,9 +21,8 @@ async function generatePdf() {
   // Set viewport to ensure desktop styles
   await page.setViewport({ width: 1200, height: 800 });
 
-  // Load the HTML file
-  const htmlContent = readFileSync(htmlPath, 'utf-8');
-  await page.setContent(htmlContent, {
+  // Load the HTML file using file:// protocol to support relative image paths
+  await page.goto(`file://${htmlPath}`, {
     waitUntil: 'networkidle0'
   });
 
