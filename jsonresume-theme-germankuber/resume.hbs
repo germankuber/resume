@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{resume.basics.name}} - CV</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>{{{css}}}</style>
+</head>
+<body>
+    <div class="cv-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="profile-photo-placeholder">
+                {{#if resume.basics.image}}
+                <img src="{{resume.basics.image}}" alt="{{resume.basics.name}}" class="profile-photo">
+                {{else}}
+                GK
+                {{/if}}
+            </div>
+            <div class="header-content">
+                <h1>{{resume.basics.name}}</h1>
+                <p class="subtitle">{{resume.basics.label}}</p>
+                <p class="summary">{{resume.basics.summary}}</p>
+            </div>
+        </header>
+
+        <!-- Contact Info -->
+        <section class="contact-section">
+            {{#if resume.basics.email}}
+            <div class="contact-item">
+                <i class="far fa-envelope"></i>
+                <a href="mailto:{{resume.basics.email}}">{{resume.basics.email}}</a>
+            </div>
+            {{/if}}
+            {{#if resume.basics.phone}}
+            <div class="contact-item">
+                <i class="fas fa-phone"></i>
+                <span>{{resume.basics.phone}}</span>
+            </div>
+            {{/if}}
+            {{#if resume.basics.location}}
+            <div class="contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>{{resume.basics.location.city}}{{#if resume.basics.location.region}}, {{resume.basics.location.region}}{{/if}}</span>
+            </div>
+            {{/if}}
+            {{#each resume.basics.profiles}}
+            <div class="contact-item">
+                <i class="{{networkIcon network}}"></i>
+                {{#if url}}
+                <a href="{{url}}" target="_blank">{{#if (eq network "Twitter")}}@{{username}}{{else}}{{url}}{{/if}}</a>
+                {{else}}
+                <span>{{username}}</span>
+                {{/if}}
+            </div>
+            {{/each}}
+        </section>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Work Experience -->
+            {{#hasItems resume.work}}
+            <section class="section">
+                <div class="section-title">
+                    <i class="fas fa-briefcase"></i>
+                    <h2>Work Experience</h2>
+                </div>
+
+                {{#each resume.work}}
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div>
+                            <div class="experience-title">{{position}}</div>
+                            <div class="experience-company">{{name}}</div>
+                        </div>
+                        <div>
+                            <div class="experience-date">{{formatDate startDate}} - {{formatDate endDate}}</div>
+                            {{#if location}}
+                            <div class="experience-location">{{location}}</div>
+                            {{/if}}
+                        </div>
+                    </div>
+                    {{#hasItems highlights}}
+                    <div class="experience-label">Achievements/Tasks</div>
+                    <ul class="experience-list">
+                        {{#each highlights}}
+                        <li>{{this}}</li>
+                        {{/each}}
+                    </ul>
+                    {{/hasItems}}
+                </div>
+                {{/each}}
+            </section>
+            {{/hasItems}}
+
+            <!-- Skills -->
+            {{#hasItems resume.skills}}
+            <section class="section">
+                <div class="section-title">
+                    <i class="fas fa-cogs"></i>
+                    <h2>Skills</h2>
+                </div>
+                <div class="skills-container">
+                    {{#each (getAllKeywords resume.skills)}}
+                    <span class="skill-tag">{{this}}</span>
+                    {{/each}}
+                </div>
+            </section>
+            {{/hasItems}}
+
+            <!-- Soft Skills (using interests if available, otherwise skip) -->
+            {{#hasItems resume.interests}}
+            <section class="section">
+                <div class="section-title">
+                    <i class="fas fa-lightbulb"></i>
+                    <h2>Soft Skills</h2>
+                </div>
+                <div class="skills-container">
+                    {{#each resume.interests}}
+                    <span class="soft-skill-tag">{{name}}</span>
+                    {{/each}}
+                </div>
+            </section>
+            {{/hasItems}}
+
+            <!-- Education -->
+            {{#hasItems resume.education}}
+            <section class="section">
+                <div class="section-title">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h2>Education</h2>
+                </div>
+                {{#each resume.education}}
+                <div class="education-item">
+                    <div class="education-header">
+                        <div>
+                            <div class="education-degree">{{area}}</div>
+                            <div class="education-school">{{institution}}</div>
+                        </div>
+                        <div>
+                            <div class="education-date">{{formatDate startDate}} - {{formatDate endDate}}</div>
+                            {{#if location}}
+                            <div class="education-location">{{location}}</div>
+                            {{/if}}
+                        </div>
+                    </div>
+                </div>
+                {{/each}}
+            </section>
+            {{/hasItems}}
+
+            <!-- Awards -->
+            {{#hasItems resume.awards}}
+            <section class="section">
+                <div class="section-title">
+                    <i class="fas fa-trophy"></i>
+                    <h2>Honor Awards</h2>
+                </div>
+                <div class="awards-grid">
+                    {{#each resume.awards}}
+                    <div class="award-item">
+                        <div class="award-title">{{title}} ({{formatDate date}} - Present)</div>
+                        <div class="award-org">{{awarder}}</div>
+                        {{#if summary}}
+                        <div class="award-desc">{{summary}}</div>
+                        {{/if}}
+                    </div>
+                    {{/each}}
+                </div>
+            </section>
+            {{/hasItems}}
+
+            <!-- Volunteer Experience -->
+            {{#hasItems resume.volunteer}}
+            <section class="section">
+                <div class="section-title">
+                    <i class="fas fa-hands-helping"></i>
+                    <h2>Volunteer Experience</h2>
+                </div>
+                {{#each resume.volunteer}}
+                <div class="volunteer-item">
+                    <div class="experience-header">
+                        <div>
+                            <div class="experience-title volunteer-title">{{position}}</div>
+                            <div class="experience-company">{{organization}}</div>
+                        </div>
+                        <div>
+                            <div class="experience-date">{{formatDate startDate}} - {{formatDate endDate}}</div>
+                            {{#if location}}
+                            <div class="experience-location">{{location}}</div>
+                            {{/if}}
+                        </div>
+                    </div>
+                    {{#if summary}}
+                    <div class="experience-label">Tasks/Achievements</div>
+                    <ul class="experience-list">
+                        <li>{{summary}}</li>
+                    </ul>
+                    {{/if}}
+                </div>
+                {{/each}}
+            </section>
+            {{/hasItems}}
+
+            <!-- Certificates -->
+            {{#hasItems resume.certificates}}
+            <section class="section">
+                <div class="section-title">
+                    <i class="fas fa-certificate"></i>
+                    <h2>Certificates</h2>
+                </div>
+                <div class="certificates-grid">
+                    {{#each resume.certificates}}
+                    <div class="certificate-item">{{name}} ({{formatDate date}} - Present)</div>
+                    {{/each}}
+                </div>
+            </section>
+            {{/hasItems}}
+
+            <!-- Projects / Organizations -->
+            {{#hasItems resume.projects}}
+            <section class="section">
+                <div class="section-title">
+                    <i class="fas fa-users"></i>
+                    <h2>Organizations</h2>
+                </div>
+                <div class="organizations-grid">
+                    {{#each resume.projects}}
+                    <div class="org-item">
+                        <div class="org-name">{{name}} {{#if description}}({{description}}){{/if}} ({{formatDate startDate}} - {{#if endDate}}{{formatDate endDate}}{{else}}Present{{/if}})</div>
+                        {{#hasItems highlights}}
+                        <div class="org-role">{{#each highlights}}{{this}}{{#unless @last}}, {{/unless}}{{/each}}</div>
+                        {{/hasItems}}
+                    </div>
+                    {{/each}}
+                </div>
+            </section>
+            {{/hasItems}}
+
+            <!-- Languages -->
+            {{#hasItems resume.languages}}
+            <section class="section">
+                <div class="section-title">
+                    <i class="fas fa-globe"></i>
+                    <h2>Languages</h2>
+                </div>
+                <div class="languages-grid">
+                    {{#each resume.languages}}
+                    <div class="language-item">
+                        <div class="language-name">{{language}}</div>
+                        <div class="language-level">{{fluency}}</div>
+                    </div>
+                    {{/each}}
+                </div>
+            </section>
+            {{/hasItems}}
+        </main>
+    </div>
+</body>
+</html>
