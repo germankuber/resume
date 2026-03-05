@@ -138,19 +138,19 @@ function generateReadme() {
 
 ---
 
-## About
+## 👋 About
 
 ${summary}
 
 ---
 
-## Key Achievements
+## 🏆 Key Achievements
 
 ${achievements.map(a => `- ${a}`).join('\n')}
 
 ---
 
-## Work Experience
+## 💼 Work Experience
 
 `;
 
@@ -167,18 +167,26 @@ ${achievements.map(a => `- ${a}`).join('\n')}
   // Add Skills
   readme += `---
 
-## Skills
+## 🛠️ Skills
 
 `;
+  const skillEmojis = {
+    'Languages': '💻',
+    'AI/ML': '🤖',
+    'Blockchain': '⛓️',
+    'Infrastructure': '☁️',
+    'Architecture': '🏗️'
+  };
   for (const [category, items] of Object.entries(skills)) {
-    readme += `**${category}:** ${items}\n\n`;
+    const emoji = skillEmojis[category] || '•';
+    readme += `${emoji} **${category}:** ${items}\n\n`;
   }
 
   // Add Education
   if (educationMatch) {
     readme += `---
 
-## Education
+## 🎓 Education
 
 **${stripHtml(educationMatch[1])}** - ${stripHtml(educationMatch[2])}
 
@@ -189,7 +197,7 @@ ${achievements.map(a => `- ${a}`).join('\n')}
   if (speakingBullets.length > 0) {
     readme += `---
 
-## Public Speaking
+## 🎤 Public Speaking
 
 `;
     for (const bullet of speakingBullets) {
@@ -202,7 +210,7 @@ ${achievements.map(a => `- ${a}`).join('\n')}
   if (performanceBullets.length > 0) {
     readme += `---
 
-## Performance Arts
+## 🎭 Performance Arts
 
 `;
     for (const bullet of performanceBullets) {
@@ -214,7 +222,7 @@ ${achievements.map(a => `- ${a}`).join('\n')}
   // Add footer
   readme += `---
 
-## Build
+## 🔧 Build
 
 \`\`\`bash
 npm install
@@ -225,7 +233,9 @@ npm run readme   # Generate README only
 
 ---
 
-*Generated from [resume.html](resume.html)*
+<div align="center">
+  <sub>⚡ Auto-generated from <a href="resume.html">resume.html</a></sub>
+</div>
 `;
 
   writeFileSync(readmePath, readme);

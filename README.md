@@ -15,13 +15,13 @@
 
 ---
 
-## About
+## 👋 About
 
 Microsoft MVP for 8 consecutive years. Founder of Net-Baires, Argentina's largest dev community (100K+ members). 15+ years building systems that move money, ship products, and scale—from low-latency trading (Rust/MEV) to AI platforms (LLM/RAG) to enterprise architectures. Technical leader who builds teams, drives architectural decisions, and represents products on stage—80+ talks at .NET Conf, DevFest, NetCoreConf, vOpen, and more across LATAM & Europe.
 
 ---
 
-## Key Achievements
+## 🏆 Key Achievements
 
 - Microsoft MVP — 8 consecutive years
 - Net-Baires Founder — 100K+ developer community
@@ -32,7 +32,7 @@ Microsoft MVP for 8 consecutive years. Founder of Net-Baires, Argentina's larges
 
 ---
 
-## Work Experience
+## 💼 Work Experience
 
 ### Founder & Lead AI Architect
 **KliverAI (Own Venture)** | 04/2025 - Present
@@ -97,27 +97,27 @@ Microsoft MVP for 8 consecutive years. Founder of Net-Baires, Argentina's larges
 
 ---
 
-## Skills
+## 🛠️ Skills
 
-**Languages:** Rust, Go, C#, TypeScript, Python
+💻 **Languages:** Rust, Go, C#, TypeScript, Python
 
-**AI/ML:** LLM System Design, OpenAI, Anthropic, LangChain, LangGraph, RAG, Prompt Engineering
+🤖 **AI/ML:** LLM System Design, OpenAI, Anthropic, LangChain, LangGraph, RAG, Prompt Engineering
 
-**Blockchain:** MEV, Zero Knowledge, Cryptography, EVM, Solana, Foundry, Hardhat
+⛓️ **Blockchain:** MEV, Zero Knowledge, Cryptography, EVM, Solana, Foundry, Hardhat
 
-**Infrastructure:** Docker, Kubernetes, AWS, Azure, Prometheus
+☁️ **Infrastructure:** Docker, Kubernetes, AWS, Azure, Prometheus
 
-**Architecture:** Domain Driven Design, Microservices, Event-Driven Systems
+🏗️ **Architecture:** Domain Driven Design, Microservices, Event-Driven Systems
 
 ---
 
-## Education
+## 🎓 Education
 
 **Systems Engineer** - UAI - Universidad Abierta Interamericana
 
 ---
 
-## Public Speaking
+## 🎤 Public Speaking
 
 - 80+ technical talks at .NET Conf, DevFest, NetCoreConf, vOpen, Global Azure Bootcamp, and meetups across LATAM & Europe
 - Topics: Rust, Blockchain, ZK, .NET, Software Architecture, Design Patterns, AI/LLMs
@@ -125,7 +125,7 @@ Microsoft MVP for 8 consecutive years. Founder of Net-Baires, Argentina's larges
 
 ---
 
-## Performance Arts
+## 🎭 Performance Arts
 
 - Stage Magic — Member of Círculo Mágico de España, performing live shows with storytelling and misdirection
 - Stand-up Comedy — Open mics and comedy nights, developing improvisation under pressure
@@ -134,7 +134,7 @@ Microsoft MVP for 8 consecutive years. Founder of Net-Baires, Argentina's larges
 
 ---
 
-## Build
+## 🔧 Build
 
 ```bash
 npm install
@@ -145,4 +145,6 @@ npm run readme   # Generate README only
 
 ---
 
-*Generated from [resume.html](resume.html)*
+<div align="center">
+  <sub>⚡ Auto-generated from <a href="resume.html">resume.html</a></sub>
+</div>
