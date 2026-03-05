@@ -1,4 +1,4 @@
-import { readFileSync, writeFileSync, existsSync } from 'fs';
+import { readFileSync } from 'fs';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
 import puppeteer from 'puppeteer';
@@ -7,19 +7,8 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const rootDir = join(__dirname, '..');
 
 async function generatePdf() {
-  const htmlPath = join(rootDir, 'index.html');
+  const htmlPath = join(rootDir, 'resume.html');
   const pdfPath = join(rootDir, 'german-kuber-cv.pdf');
-
-  // Check if HTML exists, if not build it first
-  if (!existsSync(htmlPath)) {
-    console.log('HTML not found, building first...');
-    const resumePath = join(rootDir, 'resume.json');
-    const resume = JSON.parse(readFileSync(resumePath, 'utf-8'));
-    const theme = await import('../jsonresume-theme-germankuber/index.js');
-    const html = theme.render(resume);
-    writeFileSync(htmlPath, html);
-    console.log('HTML generated.');
-  }
 
   console.log('Generating PDF...');
 
