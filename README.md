@@ -1,7 +1,7 @@
 # Germán Küber - Resume
 
 <div align="center">
-  <img src="germankuber_2.jpg" width="150" style="border-radius: 50%;" alt="Germán Küber"/>
+  <img src="germankuber_2.jpg" width="150" alt="Germán Küber"/>
 
   **Staff Engineer — Systems, AI & Blockchain | Microsoft MVP**
 
@@ -15,15 +15,13 @@
 
 ## About
 
-This repository contains my professional resume built with HTML and CSS, with PDF generation using Puppeteer.
+Microsoft MVP for 8 consecutive years. Founder of Net-Baires, Argentina's largest dev community (100K+ members). 15+ years building systems that move money, ship products, and scale—from low-latency trading (Rust/MEV) to AI platforms (LLM/RAG) to enterprise architectures. Technical leader who builds teams, drives architectural decisions, and represents products on stage—80+ talks at .NET Conf, DevFest, NetCoreConf, vOpen, and more across LATAM & Europe.
 
 ### Key Highlights
 
-- **Microsoft MVP** — 8 consecutive years
-- **Net-Baires Founder** — 100K+ developer community
-- **80+ Technical Talks** — .NET Conf, DevFest, vOpen, and more
-- **$100K+ MEV Profit** — Rust pipelines at Borderless Capital
-- **Kliver Founder** — AI training platform with 500+ users
+- **Microsoft MVP**
+- **Net-Baires Founder**
+- **Kliver Founder**
 
 ---
 
@@ -40,15 +38,24 @@ This repository contains my professional resume built with HTML and CSS, with PD
 ## Tech Stack
 
 - **HTML5 + CSS3** — Modern, responsive design
-- **Inter + Geist Mono** — Typography (Vercel's fonts)
+- **Inter + Geist Mono** — Typography
 - **Puppeteer** — PDF generation
 - **Node.js** — Build scripts
 
-## Generate PDF
+## Scripts
 
 ```bash
+# Install dependencies
 npm install
+
+# Generate PDF only
 npm run pdf
+
+# Generate README only
+npm run readme
+
+# Generate both PDF and README
+npm run build
 ```
 
 ---
