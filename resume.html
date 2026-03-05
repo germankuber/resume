@@ -50,7 +50,22 @@
             position: relative;
         }
 
+        /* Dot grid pattern background */
         .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: radial-gradient(circle, var(--primary-color) 1px, transparent 1px);
+            background-size: 20px 20px;
+            opacity: 0.15;
+            pointer-events: none;
+        }
+
+        /* Hexagon decoration */
+        .header::after {
             content: '';
             position: absolute;
             top: 0;
@@ -62,6 +77,7 @@
             background-position: right top;
             background-size: 120px;
             opacity: 0.3;
+            pointer-events: none;
         }
 
         .profile-photo {
