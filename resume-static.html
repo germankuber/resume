@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Germán Küber - CV</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #4a9b9b;
+            --primary-light: #5fbfbf;
+            --text-dark: #2d3748;
+            --text-gray: #718096;
+            --text-light: #a0aec0;
+            --bg-light: #f7fafc;
+            --border-color: #e2e8f0;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--white);
+            color: var(--text-dark);
+            line-height: 1.4;
+            font-size: 11px;
+        }
+
+        .cv-container {
+            width: 100%;
+            max-width: 100%;
+            background: var(--white);
+        }
+
+        /* Header Section */
+        .header {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            padding: 25px 30px;
+            background: var(--white);
+            position: relative;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 150px;
+            height: 150px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpolygon fill='none' stroke='%234a9b9b' stroke-width='0.5' points='50,5 95,27.5 95,72.5 50,95 5,72.5 5,27.5'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right top;
+            background-size: 120px;
+            opacity: 0.3;
+        }
+
+        .profile-photo {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+            margin-right: 25px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 36px;
+            font-weight: 500;
+            overflow: hidden;
+        }
+
+        .profile-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .header-content {
+            flex: 1;
+        }
+
+        .header-content h1 {
+            font-size: 28px;
+            font-weight: 500;
+            color: var(--text-dark);
+            margin-bottom: 2px;
+        }
+
+        .header-content .subtitle {
+            font-size: 13px;
+            color: var(--primary-color);
+            font-weight: 400;
+            margin-bottom: 8px;
+        }
+
+        .header-content .summary {
+            font-size: 11px;
+            color: var(--text-gray);
+            line-height: 1.5;
+        }
+
+        /* Contact Info */
+        .contact-section {
+            background: var(--primary-color);
+            padding: 12px 30px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6px 40px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            font-size: 11px;
+            color: var(--white);
+        }
+
+        .contact-item i {
+            width: 20px;
+            color: var(--white);
+            margin-right: 8px;
+            font-size: 12px;
+        }
+
+        .contact-item a {
+            color: var(--white);
+            text-decoration: none;
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 15px 30px;
+        }
+
+        /* Section Styling */
+        .section {
+            margin-bottom: 15px;
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            padding-bottom: 6px;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .section-title i {
+            width: 24px;
+            height: 24px;
+            background: var(--bg-light);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-color);
+            margin-right: 10px;
+            font-size: 12px;
+        }
+
+        .section-title h2 {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Experience Items */
+        .experience-item {
+            position: relative;
+            padding-left: 18px;
+            margin-bottom: 12px;
+            break-inside: avoid;
+            page-break-inside: avoid;
+        }
+
+        .experience-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 5px;
+            width: 8px;
+            height: 8px;
+            background: var(--primary-color);
+            border-radius: 50%;
+        }
+
+        .experience-item::after {
+            content: '';
+            position: absolute;
+            left: 3px;
+            top: 16px;
+            width: 2px;
+            height: calc(100% - 8px);
+            background: var(--border-color);
+        }
+
+        .experience-item:last-child::after {
+            display: none;
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 2px;
+        }
+
+        .experience-title {
+            font-size: 12px;
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        .experience-company {
+            font-size: 11px;
+            color: var(--text-dark);
+            font-weight: 400;
+        }
+
+        .experience-date {
+            font-size: 10px;
+            color: var(--primary-color);
+            font-style: italic;
+        }
+
+        .experience-location {
+            font-size: 10px;
+            color: var(--text-light);
+            text-align: right;
+        }
+
+        .experience-label {
+            font-size: 9px;
+            color: var(--primary-color);
+            margin: 2px 0;
+        }
+
+        .experience-list {
+            list-style: none;
+            margin-top: 4px;
+        }
+
+        .experience-list li {
+            position: relative;
+            padding-left: 12px;
+            font-size: 10px;
+            color: var(--text-gray);
+            margin-bottom: 3px;
+            line-height: 1.4;
+        }
+
+        .experience-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 5px;
+            width: 4px;
+            height: 4px;
+            background: var(--primary-color);
+            border-radius: 50%;
+        }
+
+        /* Skills */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+
+        .skill-tag {
+            padding: 4px 10px;
+            background: var(--bg-light);
+            border: 1px solid var(--border-color);
+            border-radius: 3px;
+            font-size: 10px;
+            color: var(--text-dark);
+        }
+
+        .soft-skill-tag {
+            padding: 4px 10px;
+            background: var(--primary-color);
+            border-radius: 3px;
+            font-size: 10px;
+            color: var(--white);
+        }
+
+        .soft-skill-tag.light {
+            background: var(--bg-light);
+            color: var(--text-dark);
+            border: 1px solid var(--border-color);
+        }
+
+        /* Education */
+        .education-item {
+            position: relative;
+            padding-left: 18px;
+            margin-bottom: 8px;
+            break-inside: avoid;
+            page-break-inside: avoid;
+        }
+
+        .education-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 5px;
+            width: 8px;
+            height: 8px;
+            background: var(--primary-color);
+            border-radius: 50%;
+        }
+
+        .education-header {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .education-degree {
+            font-size: 12px;
+            font-weight: 500;
+            color: var(--primary-color);
+        }
+
+        .education-school {
+            font-size: 11px;
+            color: var(--text-dark);
+        }
+
+        .education-date {
+            font-size: 10px;
+            color: var(--primary-color);
+            font-style: italic;
+        }
+
+        .education-location {
+            font-size: 10px;
+            color: var(--text-light);
+        }
+
+        /* Awards */
+        .awards-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        .award-item {
+            font-size: 11px;
+            break-inside: avoid;
+            page-break-inside: avoid;
+        }
+
+        .award-title {
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        .award-org {
+            font-size: 10px;
+            color: var(--text-gray);
+            font-style: italic;
+        }
+
+        .award-desc {
+            font-size: 10px;
+            color: var(--text-gray);
+            margin-top: 2px;
+            padding-left: 12px;
+            position: relative;
+        }
+
+        .award-desc::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 5px;
+            width: 4px;
+            height: 4px;
+            background: var(--primary-color);
+            border-radius: 50%;
+        }
+
+        /* Volunteer */
+        .volunteer-item {
+            position: relative;
+            padding-left: 18px;
+            break-inside: avoid;
+            page-break-inside: avoid;
+        }
+
+        .volunteer-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 5px;
+            width: 8px;
+            height: 8px;
+            background: var(--primary-color);
+            border-radius: 50%;
+        }
+
+        .volunteer-title {
+            color: var(--primary-color) !important;
+        }
+
+        /* Certificates */
+        .certificates-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 6px;
+        }
+
+        .certificate-item {
+            font-size: 11px;
+            color: var(--text-dark);
+        }
+
+        /* Organizations */
+        .organizations-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px;
+        }
+
+        .org-item {
+            font-size: 11px;
+            break-inside: avoid;
+            page-break-inside: avoid;
+        }
+
+        .org-name {
+            color: var(--text-dark);
+            font-weight: 400;
+        }
+
+        .org-role {
+            font-size: 10px;
+            color: var(--primary-color);
+            font-style: italic;
+        }
+
+        /* Languages */
+        .languages-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        .language-item {
+            font-size: 11px;
+        }
+
+        .language-name {
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        .language-level {
+            font-size: 10px;
+            color: var(--primary-color);
+            font-style: italic;
+        }
+
+        /* Print styles */
+        @media print {
+            body {
+                background: white;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            .cv-container {
+                box-shadow: none;
+            }
+            .experience-item,
+            .education-item,
+            .volunteer-item,
+            .award-item,
+            .org-item {
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cv-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="profile-photo">
+                <img src="https://media.licdn.com/dms/image/v2/D4D03AQFp-EEjkpLPKg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1729165053566?e=1746662400&v=beta&t=VCRYCsOa0X9gF2L3LAXxJxrPqqYIYwYBR0_4Ly2guwg" alt="Germán Küber">
+            </div>
+            <div class="header-content">
+                <h1>Germán Küber</h1>
+                <p class="subtitle">Rust & Cryptographic Systems Engineer</p>
+                <p class="summary">Senior Systems Engineer with deep expertise in Rust, low-level performance engineering, and blockchain infrastructure. Specialized in MEV and high-precision execution across EVM and Solana, and currently focused on advanced cryptographic technologies—Zero-Knowledge systems, TEEs, and privacy-preserving computation. Experienced in researching and prototyping ZK circuits, secure execution models, and emerging cryptographic tooling, including early exploration of homomorphic encryption workflows.</p>
+            </div>
+        </header>
+
+        <!-- Contact Info -->
+        <section class="contact-section">
+            <div class="contact-item">
+                <i class="far fa-envelope"></i>
+                <a href="mailto:German.kuber@gmail.com">German.kuber@gmail.com</a>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-phone"></i>
+                <span>+34 666 844731</span>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Las Palmas, Spain</span>
+            </div>
+            <div class="contact-item">
+                <i class="fab fa-linkedin"></i>
+                <a href="https://linkedin.com/in/germankuber">linkedin.com/in/germankuber</a>
+            </div>
+            <div class="contact-item">
+                <i class="fab fa-twitter"></i>
+                <span>@germankuber</span>
+            </div>
+            <div class="contact-item">
+                <i class="fab fa-slack"></i>
+                <span>germankuber</span>
+            </div>
+            <div class="contact-item">
+                <i class="fab fa-github"></i>
+                <a href="https://github.com/GermanKuber">github.com/GermanKuber</a>
+            </div>
+        </section>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Work Experience -->
+            <section class="section">
+                <div class="section-title">
+                    <i class="fas fa-briefcase"></i>
+                    <h2>Work Experience</h2>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div>
+                            <div class="experience-title">Lead AI Architect (Technical Creator)</div>
+                            <div class="experience-company">KliverAI</div>
+                        </div>
+                        <div>
+                            <div class="experience-date">04/2025 - Present</div>
+                        </div>
+                    </div>
+                    <div class="experience-label">Achievements/Tasks</div>
+                    <ul class="experience-list">
+                        <li>Designed and built the full architecture of Kliver, an AI-driven conversational simulation platform (Python + .NET + Kubernetes) supporting dynamic multi-step roleplay training.</li>
+                        <li>Implemented low-latency real-time audio pipelines using OpenAI Realtime API and SignalR, enabling streaming text/audio, event-driven interactions, and responsive conversational loops.</li>
+                        <li>Developed the adaptive simulation engine with LangGraph, including step navigation (H/HH/HHH), success/failure logic, and RAG-powered personalization using workspace-specific documentation.</li>
+                        <li>Built internal data pipelines for analytics: structured logging of conversations, aggregation of performance metrics, and generation of datasets for training evaluation and model consistency.</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div>
+                            <div class="experience-title">Fractional CTO</div>
+                            <div class="experience-company">Rocking Product</div>
+                        </div>
+                        <div>
+                            <div class="experience-date">04/2025 - 11/2025</div>
+                            <div class="experience-location">Buenos Aires</div>
+                        </div>
+                    </div>
+                    <div class="experience-label">Achievements/Tasks</div>
+                    <ul class="experience-list">
+                        <li>Led research initiatives on LLM architectures, evaluation methods, and emerging techniques (RAG, fine-tuning, model optimization), identifying opportunities to enhance product capabilities.</li>
+                        <li>Redesigned AI and LLM-powered modules, improving latency, accuracy, and consistency through better prompt structures, inference flows, and model selection.</li>
+                        <li>Designed end-to-end LLM system workflows, including context pipelines, retrieval strategies, and scalable inference patterns aligned with real-user requirements.</li>
+                        <li>Provided technical leadership to the engineering team—defining tasks, guiding experimentation, and establishing best practices for building AI-driven features.</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div>
+                            <div class="experience-title">Lead Software Engineer</div>
+                            <div class="experience-company">Borderless Capital / CTF. Capital</div>
+                        </div>
+                        <div>
+                            <div class="experience-date">08/2021 - 04/2025</div>
+                        </div>
+                    </div>
+                    <div class="experience-label">Achievements/Tasks</div>
+                    <ul class="experience-list">
+                        <li>Designed and implemented high-performance MEV searcher pipelines in Rust for both EVM and Solana, optimizing execution latency through custom networking and parallel transaction broadcasting.</li>
+                        <li>Built custom transaction delivery systems (RPC + direct validator/TPU routes), achieving sub-slot execution and improving inclusion probability under heavy mempool competition.</li>
+                        <li>Developed strategy logic including liquidation detection, multi-hop arbitrage, cross-chain flow modeling, and block simulation tooling for opportunity validation and backtesting.</li>
+                        <li>Implemented low-latency monitoring and analytics using Prometheus + custom Rust telemetry, enabling real-time insight into slot timing, validator rotation, and execution performance.</li>
+                        <li>Conducted research and proof-of-concept development on zero-knowledge technologies and L2 ecosystems (StarkNet, ZK circuits, account abstraction), evaluating their applicability for internal MEV tooling and next-generation blockchain products.</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div>
+                            <div class="experience-title">Sr. Software Architect (Front-End / Back-End)</div>
+                            <div class="experience-company">Paramo Technology</div>
+                        </div>
+                        <div>
+                            <div class="experience-date">08/2020 - 08/2021</div>
+                        </div>
+                    </div>
+                    <div class="experience-label">Achievements/Tasks</div>
+                    <ul class="experience-list">
+                        <li>Led all architecture decisions for a large-scale online casino platform, defining core systems, services, and technical standards across the organization.</li>
+                        <li>Conducted technical interviews and built high-performance engineering teams aligned with the company's product and scalability needs.</li>
+                        <li>Organized and delivered internal training sessions to upskill developers, establish best practices, and improve engineering consistency.</li>
+                        <li>Collaborated across all departments to align product, engineering, and infrastructure requirements, ensuring reliable and scalable platform growth.</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div>
+                            <div class="experience-title">Software Architect (Front-End / Back-End)</div>
+                            <div class="experience-company">CloudX</div>
+                        </div>
+                        <div>
+                            <div class="experience-date">08/2017 - 08/2020</div>
+                            <div class="experience-location">Buenos Aires</div>
+                        </div>
+                    </div>
+                    <div class="experience-label">Achievements/Tasks</div>
+                    <ul class="experience-list">
+                        <li>Designed scalable Angular/React solutions and reusable UI components, leading architecture decisions across multiple product lines.</li>
+                        <li>Implemented microservices-based backend architecture and domain-driven designs to support high-availability enterprise applications.</li>
+                        <li>Delivered technical training and conference talks for partners and internal teams, improving engineering practices and cross-team alignment.</li>
+                        <li>Collaborated directly with clients through on-site visits, gathering requirements, refining product roadmaps, and ensuring successful technical adoption.</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div>
+                            <div class="experience-title">Software Architect (Angular / .NET)</div>
+                            <div class="experience-company">Majestic Hotel Group</div>
+                        </div>
+                        <div>
+                            <div class="experience-date">01/2014 - 08/2017</div>
+                        </div>
+                    </div>
+                    <div class="experience-label">Achievements/Tasks</div>
+                    <ul class="experience-list">
+                        <li>Estimated tasks and developed full-stack features using Angular and .NET for internal hotel management applications.</li>
+                        <li>Led the migration from AngularJS to Angular 4, improving maintainability, performance, and code consistency across the platform.</li>
+                        <li>Redesigned the data model and refactored backend workflows toward an event-oriented architecture, reducing coupling and simplifying integrations.</li>
+                        <li>Defined and documented backend and frontend development processes to streamline deployments and team collaboration.</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div>
+                            <div class="experience-title">.Net Web Developer</div>
+                            <div class="experience-company">Plus54</div>
+                        </div>
+                        <div>
+                            <div class="experience-date">08/2009 - 03/2014</div>
+                            <div class="experience-location">Buenos Aires</div>
+                        </div>
+                    </div>
+                    <div class="experience-label">Achievements/Tasks</div>
+                    <ul class="experience-list">
+                        <li>Developed .NET web applications and internal tools, delivering features across backend and frontend.</li>
+                        <li>Designed and built early mobile application components, collaborating with senior developers on architecture and UX.</li>
+                        <li>Integrated external services and APIs, implementing unit tests and ensuring reliable data exchange between systems.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Skills -->
+            <section class="section">
+                <div class="section-title">
+                    <i class="fas fa-cogs"></i>
+                    <h2>Skills</h2>
+                </div>
+                <div class="skills-container">
+                    <span class="skill-tag">Rust</span>
+                    <span class="skill-tag">Hardhat</span>
+                    <span class="skill-tag">Foundry</span>
+                    <span class="skill-tag">EVM</span>
+                    <span class="skill-tag">Huff</span>
+                    <span class="skill-tag">Prometheus</span>
+                    <span class="skill-tag">Blockchain</span>
+                    <span class="skill-tag">Object Oriented Programming</span>
+                    <span class="skill-tag">Pattern Design</span>
+                    <span class="skill-tag">C#</span>
+                    <span class="skill-tag">TypeScript</span>
+                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">Azure</span>
+                    <span class="skill-tag">AWS</span>
+                    <span class="skill-tag">Functional Programming</span>
+                    <span class="skill-tag">LLM System Design</span>
+                    <span class="skill-tag">Prompt Engineering</span>
+                    <span class="skill-tag">Haskell</span>
+                    <span class="skill-tag">NodeJs</span>
+                    <span class="skill-tag">Domain Driven Design</span>
+                    <span class="skill-tag">DuckDB</span>
+                    <span class="skill-tag">Docker</span>
+                    <span class="skill-tag">Cryptography</span>
+                    <span class="skill-tag">MEV</span>
+                    <span class="skill-tag">Zero Knowledge</span>
+                </div>
+            </section>
+
+            <!-- Soft Skills -->
+            <section class="section">
+                <div class="section-title">
+                    <i class="fas fa-lightbulb"></i>
+                    <h2>Soft Skills</h2>
+                </div>
+                <div class="skills-container">
+                    <span class="soft-skill-tag">Avid learner</span>
+                    <span class="soft-skill-tag">Collaborative Teamwork</span>
+                    <span class="soft-skill-tag">Rapid Learning & Research</span>
+                    <span class="soft-skill-tag">Adaptability</span>
+                    <span class="soft-skill-tag">Clear Technical Communication</span>
+                    <span class="soft-skill-tag light">End-to-end big picture</span>
+                    <span class="soft-skill-tag light">Mentorship and Coaching</span>
+                    <span class="soft-skill-tag light">Deep Focus / High-Concentration Work</span>
+                    <span class="soft-skill-tag light">Results-focused</span>
+                    <span class="soft-skill-tag light">Analytical Problem-Solving</span>
+                </div>
+            </section>
+
+            <!-- Education -->
+            <section class="section">
+                <div class="section-title">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h2>Education</h2>
+                </div>
+                <div class="education-item">
+                    <div class="education-header">
+                        <div>
+                            <div class="education-degree">Systems Engineer</div>
+                            <div class="education-school">UAI - Universidad Abierta Interamericana</div>
+                        </div>
+                        <div>
+                            <div class="education-date">01/2017 - 12/2021</div>
+                            <div class="education-location">Buenos Aires, Argentina</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Awards -->
+            <section class="section">
+                <div class="section-title">
+                    <i class="fas fa-trophy"></i>
+                    <h2>Honor Awards</h2>
+                </div>
+                <div class="awards-grid">
+                    <div class="award-item">
+                        <div class="award-title">Microsoft MVP Developer Technologies (02/2017 - Present)</div>
+                        <div class="award-org">Microsoft</div>
+                    </div>
+                    <div class="award-item">
+                        <div class="award-title">Microsoft Student Partners (01/2016 - Present)</div>
+                        <div class="award-org">Microsoft</div>
+                        <div class="award-desc">Is a recognition about my effort in the university and the community.</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Volunteer Experience -->
+            <section class="section">
+                <div class="section-title">
+                    <i class="fas fa-hands-helping"></i>
+                    <h2>Volunteer Experience</h2>
+                </div>
+                <div class="volunteer-item">
+                    <div class="experience-header">
+                        <div>
+                            <div class="experience-title volunteer-title">Programá tu futuro</div>
+                            <div class="experience-company">Buenos Aires Government</div>
+                        </div>
+                        <div>
+                            <div class="experience-date">02/2015 - 10/2015</div>
+                            <div class="experience-location">Buenos Aires</div>
+                        </div>
+                    </div>
+                    <div class="experience-label">Tasks/Achievements</div>
+                    <ul class="experience-list">
+                        <li>Teach programming</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Certificates -->
+            <section class="section">
+                <div class="section-title">
+                    <i class="fas fa-certificate"></i>
+                    <h2>Certificates</h2>
+                </div>
+                <div class="certificates-grid">
+                    <div class="certificate-item">MS: Developing Microsoft Azure Solutions (02/2016 - Present)</div>
+                    <div class="certificate-item">MCPS: Microsoft Certified Professional (02/2015 - Present)</div>
+                    <div class="certificate-item">Software Architecture (01/2015 - 08/2015)</div>
+                </div>
+            </section>
+
+            <!-- Organizations -->
+            <section class="section">
+                <div class="section-title">
+                    <i class="fas fa-users"></i>
+                    <h2>Organizations</h2>
+                </div>
+                <div class="organizations-grid">
+                    <div class="org-item">
+                        <div class="org-name">Crypto Para Mortales (Conference) (01/2023 - Present)</div>
+                        <div class="org-role">Founder</div>
+                    </div>
+                    <div class="org-item">
+                        <div class="org-name">Net-Baires (.NET Community) (01/2015 - Present)</div>
+                        <div class="org-role">Founder</div>
+                    </div>
+                    <div class="org-item">
+                        <div class="org-name">Patrones Para Mortales (03/2020 - Present)</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Languages -->
+            <section class="section">
+                <div class="section-title">
+                    <i class="fas fa-globe"></i>
+                    <h2>Languages</h2>
+                </div>
+                <div class="languages-grid">
+                    <div class="language-item">
+                        <div class="language-name">Spanish</div>
+                        <div class="language-level">Native or Bilingual Proficiency</div>
+                    </div>
+                    <div class="language-item">
+                        <div class="language-name">English</div>
+                        <div class="language-level">Full Professional Proficiency</div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

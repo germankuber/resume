@@ -30,6 +30,9 @@ async function generatePdf() {
 
   const page = await browser.newPage();
 
+  // Set viewport to ensure desktop styles
+  await page.setViewport({ width: 1200, height: 800 });
+
   // Load the HTML file
   const htmlContent = readFileSync(htmlPath, 'utf-8');
   await page.setContent(htmlContent, {
