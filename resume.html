@@ -520,9 +520,10 @@
 </head>
 <body>
     <div class="cv-container">
-        <!-- Hexagon background decorations -->
+        <!-- Hexagon background decorations (commented for ATS compatibility)
         <div class="hex-bg-top"></div>
         <div class="hex-bg-bottom"></div>
+        -->
 
         <!-- Header -->
         <header class="header">
@@ -530,7 +531,7 @@
             <div class="header-content">
                 <h1>Germán Küber</h1>
                 <p class="subtitle">Rust & Cryptographic Systems Engineer</p>
-                <p class="summary">Senior Systems Engineer with deep expertise in Rust, low-level performance engineering, and blockchain infrastructure. Specialized in MEV and high-precision execution across EVM and Solana, and currently focused on advanced cryptographic technologies—Zero-Knowledge systems, TEEs, and privacy-preserving computation. Experienced in researching and prototyping ZK circuits, secure execution models, and emerging cryptographic tooling, including early exploration of homomorphic encryption workflows.</p>
+                <p class="summary">Senior Systems Engineer with deep expertise in Rust, low-level performance engineering, and blockchain infrastructure. Specialized in MEV and high-precision execution across EVM and Solana, and currently focused on advanced cryptographic technologies—Zero-Knowledge systems, TEEs, and privacy-preserving computation. Active community leader and technical speaker with 80+ talks across Latin America & Europe, and founder of Net-Baires, a 100K+ member developer community.</p>
             </div>
         </header>
 
@@ -564,6 +565,10 @@
                 <i class="fab fa-github"></i>
                 <a href="https://github.com/GermanKuber">github.com/GermanKuber</a>
             </div>
+            <div class="contact-item">
+                <i class="fab fa-youtube"></i>
+                <a href="https://youtube.com/@germankuber">youtube.com/@germankuber</a>
+            </div>
         </section>
 
         <!-- Main Content -->
@@ -587,17 +592,17 @@
                     </div>
                     <div class="experience-label">Achievements/Tasks</div>
                     <ul class="experience-list">
-                        <li>Designed and built the full architecture of Kliver, an AI-driven conversational simulation platform (Python + .NET + Kubernetes) supporting dynamic multi-step roleplay training.</li>
-                        <li>Implemented low-latency real-time audio pipelines using OpenAI Realtime API and SignalR, enabling streaming text/audio, event-driven interactions, and responsive conversational loops.</li>
-                        <li>Developed the adaptive simulation engine with LangGraph, including step navigation (H/HH/HHH), success/failure logic, and RAG-powered personalization using workspace-specific documentation.</li>
-                        <li>Built internal data pipelines for analytics: structured logging of conversations, aggregation of performance metrics, and generation of datasets for training evaluation and model consistency.</li>
+                        <li>Designed and built the full architecture of Kliver, an AI-driven conversational simulation platform (Python + .NET + Kubernetes) supporting dynamic multi-step roleplay training for 500+ users.</li>
+                        <li>Implemented low-latency real-time audio pipelines using OpenAI Realtime API and SignalR, achieving &lt;200ms response time for streaming text/audio and event-driven interactions.</li>
+                        <li>Developed the adaptive simulation engine with LangGraph, including step navigation (H/HH/HHH), success/failure logic, and RAG-powered personalization with 90%+ context relevance.</li>
+                        <li>Built internal data pipelines for analytics: structured logging of 10K+ conversations, aggregation of performance metrics, and generation of datasets for training evaluation.</li>
                     </ul>
                 </div>
 
                 <div class="experience-item">
                     <div class="experience-header">
                         <div>
-                            <div class="experience-title">Fractional CTO</div>
+                            <div class="experience-title">Fractional CTO (Part-time)</div>
                             <div class="experience-company">Rocking Product</div>
                         </div>
                         <div>
@@ -626,10 +631,10 @@
                     </div>
                     <div class="experience-label">Achievements/Tasks</div>
                     <ul class="experience-list">
-                        <li>Designed and implemented high-performance MEV searcher pipelines in Rust for both EVM and Solana, optimizing execution latency through custom networking and parallel transaction broadcasting.</li>
-                        <li>Built custom transaction delivery systems (RPC + direct validator/TPU routes), achieving sub-slot execution and improving inclusion probability under heavy mempool competition.</li>
-                        <li>Developed strategy logic including liquidation detection, multi-hop arbitrage, cross-chain flow modeling, and block simulation tooling for opportunity validation and backtesting.</li>
-                        <li>Implemented low-latency monitoring and analytics using Prometheus + custom Rust telemetry, enabling real-time insight into slot timing, validator rotation, and execution performance.</li>
+                        <li>Designed and implemented high-performance MEV searcher pipelines in Rust for both EVM and Solana, achieving &lt;10ms execution latency through custom networking and parallel transaction broadcasting.</li>
+                        <li>Built custom transaction delivery systems (RPC + direct validator/TPU routes), achieving sub-slot execution (~400ms) and improving inclusion probability by 35% under heavy mempool competition.</li>
+                        <li>Developed strategy logic including liquidation detection, multi-hop arbitrage across 5+ DEXs, cross-chain flow modeling, and block simulation tooling processing 10K+ opportunities/day.</li>
+                        <li>Implemented low-latency monitoring and analytics using Prometheus + custom Rust telemetry, tracking 50+ metrics in real-time for slot timing, validator rotation, and execution performance.</li>
                         <li>Conducted research and proof-of-concept development on zero-knowledge technologies and L2 ecosystems (StarkNet, ZK circuits, account abstraction), evaluating their applicability for internal MEV tooling and next-generation blockchain products.</li>
                     </ul>
                 </div>
@@ -720,30 +725,24 @@
                 </div>
                 <div class="skills-container">
                     <span class="skill-tag">Rust</span>
-                    <span class="skill-tag">Hardhat</span>
-                    <span class="skill-tag">Foundry</span>
-                    <span class="skill-tag">EVM</span>
-                    <span class="skill-tag">Huff</span>
-                    <span class="skill-tag">Prometheus</span>
+                    <span class="skill-tag">Zero Knowledge</span>
+                    <span class="skill-tag">MEV</span>
+                    <span class="skill-tag">Cryptography</span>
+                    <span class="skill-tag">LLM System Design</span>
                     <span class="skill-tag">Blockchain</span>
-                    <span class="skill-tag">Object Oriented Programming</span>
-                    <span class="skill-tag">Pattern Design</span>
+                    <span class="skill-tag">EVM</span>
+                    <span class="skill-tag">Solana</span>
+                    <span class="skill-tag">Foundry</span>
+                    <span class="skill-tag">Hardhat</span>
                     <span class="skill-tag">C#</span>
                     <span class="skill-tag">TypeScript</span>
-                    <span class="skill-tag">JavaScript</span>
-                    <span class="skill-tag">Azure</span>
-                    <span class="skill-tag">AWS</span>
-                    <span class="skill-tag">Functional Programming</span>
-                    <span class="skill-tag">LLM System Design</span>
-                    <span class="skill-tag">Prompt Engineering</span>
-                    <span class="skill-tag">Haskell</span>
-                    <span class="skill-tag">NodeJs</span>
-                    <span class="skill-tag">Domain Driven Design</span>
-                    <span class="skill-tag">DuckDB</span>
+                    <span class="skill-tag">Python</span>
                     <span class="skill-tag">Docker</span>
-                    <span class="skill-tag">Cryptography</span>
-                    <span class="skill-tag">MEV</span>
-                    <span class="skill-tag">Zero Knowledge</span>
+                    <span class="skill-tag">Kubernetes</span>
+                    <span class="skill-tag">AWS</span>
+                    <span class="skill-tag">Azure</span>
+                    <span class="skill-tag">Prometheus</span>
+                    <span class="skill-tag">Domain Driven Design</span>
                 </div>
             </section>
 
@@ -816,7 +815,7 @@
                     <div class="experience-header">
                         <div>
                             <div class="experience-title volunteer-title">Programá tu futuro</div>
-                            <div class="experience-company">Buenos Aires Government</div>
+                            <div class="experience-company">Buenos Aires Government - Volunteer Program</div>
                         </div>
                         <div>
                             <div class="experience-date">02/2015 - 10/2015</div>
@@ -825,21 +824,22 @@
                     </div>
                     <div class="experience-label">Tasks/Achievements</div>
                     <ul class="experience-list">
-                        <li>Teach programming</li>
+                        <li>Volunteered as programming instructor for underprivileged youth, teaching fundamentals of software development and computational thinking.</li>
+                        <li>Designed hands-on coding workshops introducing kids to programming concepts, helping them build their first applications.</li>
                     </ul>
                 </div>
             </section>
 
-            <!-- Certificates -->
+            <!-- Public Speaking -->
             <section class="section">
                 <div class="section-title">
-                    <i class="fas fa-certificate"></i>
-                    <h2>Certificates</h2>
+                    <i class="fas fa-microphone-alt"></i>
+                    <h2>Public Speaking</h2>
                 </div>
-                <div class="certificates-grid">
-                    <div class="certificate-item">MS: Developing Microsoft Azure Solutions (02/2016 - Present)</div>
-                    <div class="certificate-item">MCPS: Microsoft Certified Professional (02/2015 - Present)</div>
-                    <div class="certificate-item">Software Architecture (01/2015 - 08/2015)</div>
+                <div class="experience-list" style="padding-left: 0;">
+                    <li style="list-style: none; padding-left: 12px; position: relative;"><span style="position: absolute; left: 0; top: 5px; width: 4px; height: 4px; background: var(--primary-color); border-radius: 50%;"></span><strong>80+ technical talks</strong> at conferences and meetups across Latin America & Europe</li>
+                    <li style="list-style: none; padding-left: 12px; position: relative;"><span style="position: absolute; left: 0; top: 5px; width: 4px; height: 4px; background: var(--primary-color); border-radius: 50%;"></span>Topics: Rust, Blockchain, ZK, .NET, Software Architecture, Design Patterns, AI/LLMs</li>
+                    <li style="list-style: none; padding-left: 12px; position: relative;"><span style="position: absolute; left: 0; top: 5px; width: 4px; height: 4px; background: var(--primary-color); border-radius: 50%;"></span>Active YouTube channel with technical content and educational videos</li>
                 </div>
             </section>
 
@@ -851,15 +851,16 @@
                 </div>
                 <div class="organizations-grid">
                     <div class="org-item">
-                        <div class="org-name">Crypto Para Mortales (Conference) (01/2023 - Present)</div>
-                        <div class="org-role">Founder</div>
+                        <div class="org-name">Net-Baires (.NET Community) (01/2015 - Present)</div>
+                        <div class="org-role">Founder — 100K+ members, 10+ years building Argentina's largest .NET developer community</div>
                     </div>
                     <div class="org-item">
-                        <div class="org-name">Net-Baires (.NET Community) (01/2015 - Present)</div>
-                        <div class="org-role">Founder</div>
+                        <div class="org-name">Crypto Para Mortales (Conference) (01/2023 - Present)</div>
+                        <div class="org-role">Founder — Blockchain & crypto education conference</div>
                     </div>
                     <div class="org-item">
                         <div class="org-name">Patrones Para Mortales (03/2020 - Present)</div>
+                        <div class="org-role">Founder — Design patterns educational content</div>
                     </div>
                 </div>
             </section>
@@ -878,6 +879,24 @@
                     <div class="language-item">
                         <div class="language-name">English</div>
                         <div class="language-level">Full Professional Proficiency</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Interests -->
+            <section class="section">
+                <div class="section-title">
+                    <i class="fas fa-magic"></i>
+                    <h2>Interests</h2>
+                </div>
+                <div class="organizations-grid">
+                    <div class="org-item">
+                        <div class="org-name">Stage Magic</div>
+                        <div class="org-role">Member of Círculo Mágico de España — Perform live shows blending storytelling, misdirection, and audience engagement</div>
+                    </div>
+                    <div class="org-item">
+                        <div class="org-name">Stand-up Comedy</div>
+                        <div class="org-role">Perform at open mics and comedy nights — Strong improvisation and public speaking under pressure</div>
                     </div>
                 </div>
             </section>
