@@ -7,7 +7,7 @@ const rootDir = join(__dirname, '..');
 
 async function generatePdf() {
   const htmlPath = join(rootDir, 'resume.html');
-  const pdfPath = join(rootDir, 'german-kuber-cv.pdf');
+  const pdfPath = join(rootDir, 'Germán Küber.pdf');
 
   console.log('Generating PDF...');
 
