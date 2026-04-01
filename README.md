@@ -1,7 +1,7 @@
 # Germán Küber
 
 <div align="center">
-  <img src="germankuber_2.jpg" width="150" alt="Germán Küber"/>
+  <img src="germankuber_2.jpg" width="150" style="border-radius:50%" alt="Germán Küber"/>
 
   ### Staff Engineer — Systems, AI & Blockchain | Microsoft MVP
 
@@ -27,15 +27,15 @@ Microsoft MVP for 8 consecutive years. Founder of Net-Baires, Argentina's larges
 - Net-Baires Founder — 100K+ developer community
 - 80+ Technical Talks — .NET Conf, DevFest, vOpen
 - $100K+ MEV Profit — Rust pipelines at Borderless
-- Kliver Founder — AI training platform, 500+ users
+- Kliver Co-Founder — AI training platform, 500+ users
 - $50M+ Daily Volume — On-chain monitoring systems
 
 ---
 
 ## 💼 Work Experience
 
-### Founder & Lead AI Architect
-**KliverAI (Own Venture)** | 04/2025 - Present
+### Co-Founder & Lead AI Architect
+**KliverAI (Own Venture)** | 04/2025 - 04/2026
 
 - Founded and built Kliver—an AI platform that converts expert knowledge into scalable training simulations. Full architecture (Python + .NET + Kubernetes) supporting 500+ users in dynamic roleplay scenarios.
 - Implemented low-latency real-time audio pipelines using OpenAI Realtime API and SignalR, achieving <200ms response time for streaming text/audio and event-driven interactions.
@@ -49,7 +49,7 @@ Microsoft MVP for 8 consecutive years. Founder of Net-Baires, Argentina's larges
 
 - Led and restructured a team of 8 engineers, redefining roles, processes, and delivery workflows—improving delivery velocity and overall code quality.
 - Collaborated directly with clients to define product requirements and roadmap priorities, bridging technical constraints with business decisions.
-- Shipped multiple AI-powered features to production, establishing engineering best practices and CI/CD workflows across the team.
+- Shipped multiple AI-powered features to production using Python (FastAPI, LangChain), establishing engineering best practices and CI/CD workflows across the team.
 - Implemented AI-driven development workflows with autonomous agents automating code review, testing, deploys, and monitoring—significantly reducing manual overhead.
 - Optimized LLM usage and cloud infrastructure through model selection, prompt efficiency, and caching strategies—reducing API and cloud spend by 45%+.
 - Proposed and led full stack migration from JavaScript to .NET, modernizing the architecture for long-term scalability and team productivity.
@@ -57,7 +57,7 @@ Microsoft MVP for 8 consecutive years. Founder of Net-Baires, Argentina's larges
 ### Lead Software Engineer
 **Borderless Capital / CTF. Capital** | 08/2021 - 04/2025
 
-- Designed and implemented high-performance MEV searcher pipelines in Rust for both EVM and Solana, generating $100K+ annual profit with <10ms execution latency through custom networking and parallel transaction broadcasting.
+- Designed and implemented high-performance MEV searcher pipelines in Rust and Python/Cython for both EVM and Solana, generating $100K+ annual profit with <10ms execution latency through custom networking and parallel transaction broadcasting.
 - Built custom transaction delivery systems (RPC + direct validator/TPU routes), achieving sub-slot execution (~400ms) and improving inclusion probability by 35% under heavy mempool competition.
 - Developed strategy logic including liquidation detection, multi-hop arbitrage across 5+ DEXs, and cross-chain flow modeling—monitoring $50M+ daily on-chain volume and processing 10K+ opportunities/day.
 - Implemented low-latency monitoring and analytics using Prometheus + custom Rust telemetry, tracking 50+ metrics in real-time for slot timing, validator rotation, and execution performance.
@@ -99,7 +99,7 @@ Microsoft MVP for 8 consecutive years. Founder of Net-Baires, Argentina's larges
 
 ## 🛠️ Skills
 
-💻 **Languages:** Rust, Go, C#, TypeScript, Python
+💻 **Languages:** Rust, Go, C#, TypeScript, Python, Cython
 
 🤖 **AI/ML:** LLM System Design, OpenAI, Anthropic, LangChain, LangGraph, RAG, Prompt Engineering
 

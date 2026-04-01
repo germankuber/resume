@@ -124,7 +124,7 @@ function generateReadme() {
   let readme = `# ${name}
 
 <div align="center">
-  <img src="germankuber_2.jpg" width="150" alt="${name}"/>
+  <img src="germankuber_2.jpg" width="150" style="border-radius:50%" alt="${name}"/>
 
   ### ${subtitle}
 
