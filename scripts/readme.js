@@ -112,7 +112,24 @@ function generateReadme() {
 
   // Extract other sections
   const educationSection = extractSection(html, 'Education');
-  const educationMatch = educationSection.match(/<div class="education-degree">([^<]+)<\/div>[\s\S]*?<div class="education-school">([^<]+)<\/div>/);
+  const educationItems = [];
+  const eduItemRegex = /<div class="education-item">([\s\S]*?)<\/div>\s*<\/div>\s*<\/div>/gi;
+  let eduMatch;
+  while ((eduMatch = eduItemRegex.exec(educationSection)) !== null) {
+    const block = eduMatch[1];
+    const degreeMatch = block.match(/<div class="education-degree">([^<]+)<\/div>/);
+    const schoolMatch = block.match(/<div class="education-school">([^<]+)<\/div>/);
+    const dateMatch = block.match(/<div class="education-date">([^<]+)<\/div>/);
+    const locationMatch = block.match(/<div class="education-location">([^<]+)<\/div>/);
+    if (degreeMatch && schoolMatch) {
+      educationItems.push({
+        degree: stripHtml(degreeMatch[1]),
+        school: stripHtml(schoolMatch[1]),
+        date: dateMatch ? stripHtml(dateMatch[1]) : '',
+        location: locationMatch ? stripHtml(locationMatch[1]) : ''
+      });
+    }
+  }
 
   const publicSpeakingSection = extractSection(html, 'Public Speaking');
   const speakingBullets = extractListItems(publicSpeakingSection);
@@ -183,14 +200,17 @@ ${achievements.map(a => `- ${a}`).join('\n')}
   }
 
   // Add Education
-  if (educationMatch) {
+  if (educationItems.length > 0) {
     readme += `---
 
 ## 🎓 Education
 
-**${stripHtml(educationMatch[1])}** - ${stripHtml(educationMatch[2])}
-
 `;
+    for (const edu of educationItems) {
+      const meta = [edu.date, edu.location].filter(Boolean).join(' · ');
+      readme += `- **${edu.degree}** — ${edu.school}${meta ? ` _(${meta})_` : ''}\n`;
+    }
+    readme += '\n';
   }
 
   // Add Public Speaking

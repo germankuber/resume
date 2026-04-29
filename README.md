@@ -113,7 +113,8 @@ Microsoft MVP for 8 consecutive years. Founder of Net-Baires, Argentina's larges
 
 ## 🎓 Education
 
-**Systems Engineer** - UAI - Universidad Abierta Interamericana
+- **Polkadot Builder Program** — Polkadot Blockchain Academy _(04/2026)_
+- **Systems Engineer** — UAI - Universidad Abierta Interamericana _(01/2017 - 12/2021)_
 
 ---
 
